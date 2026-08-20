@@ -1,0 +1,48 @@
+[2m10:16:17 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mIn HTML, <a> cannot be a descendant of <a>.
+This will cause a hydration error.
+
+  ...
+    <Outlet>
+      <RenderedRoute match={{params:{}, ...}} routeContext={{outlet:null, ...}}>
+        <Home>
+          <div className="bg-premium...">
+            <Hero>
+            <CategorySection title="New Arrivals" subtitle="Discover o..." products={[...]} theme="accessories" ...>
+              <section className="relative p...">
+                <div>
+                <div>
+                <div className="relative z...">
+                  <motion.div>
+                  <div className="grid grid-...">
+                    <ProductCard product={{id:"w2",name:"...", ...}} index={0}>
+                      <motion.div custom={0} variants={{hidden:{...}, ...}} initial="hidden" whileInView="show" ...>
+                        <div style={{}} ref={function}>
+                          <LinkWithRef to="/product/w2" id="product-ca..." className="group block">
+>                           <a
+>                             id="product-card-w2"
+>                             className="group block"
+>                             href="/product/w2"
+>                             onClick={function handleClick}
+>                             ref={function}
+>                             target={undefined}
+>                             data-discover="true"
+>                           >
+                              ...
+                                <div className="absolute t..." style={{...}} ref={function}>
+                                  <div className="opacity-0 ...">
+                                    <button>
+                                    <LinkWithRef to="/product/w2" id="quickview-w2" onClick={function onClick} ...>
+>                                     <a
+>                                       id="quickview-w2"
+>                                       className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center..."
+>                                       href="/product/w2"
+>                                       onClick={function handleClick}
+>                                       ref={function}
+>                                       target={undefined}
+>                                       data-discover="true"
+>                                     >
+                    ...
+            ...
+
+[2m10:16:17 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m<a> cannot contain a nested <a>.
+See this log for the ancestor stack trace.
