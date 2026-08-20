@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OtakuThreadz - Premium Anime Streetwear. Limited edition tees from your favorite series.">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>OtakuThreadz | Premium Anime Streetwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syndic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="OtakuThreadz Home">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 4L38 14v20L24 44L10 34V14L24 4Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M24 14L24 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 22L34 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">OtakuThreadz</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#shop" class="nav-link">Shop All</a></li>
+          <li><a href="#size-guide" class="nav-link">Size Guide</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn search-btn" aria-label="Search products" aria-expanded="false" aria-controls="search-modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </button>
+
+        <button class="icon-btn wishlist-btn" aria-label="Wishlist (0 items)" aria-expanded="false" aria-controls="wishlist-modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="badge wishlist-count" aria-live="polite">0</span>
+        </button>
+
+        <button class="icon-btn cart-btn" aria-label="Shopping cart (0 items)" aria-expanded="false" aria-controls="cart-sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="badge cart-count" aria-live="polite">0</span>
+        </button>
+
+        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" hidden>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile menu" hidden>
+      <nav class="mobile-nav">
+        <a href="#collections" class="mobile-nav-link">Collections</a>
+        <a href="#shop" class="mobile-nav-link">Shop All</a>
+        <a href="#size-guide" class="mobile-nav-link">Size Guide</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Modal -->
+  <div class="modal search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search products" hidden>
+    <div class="modal-backdrop" tabindex="-1"></div>
+    <div class="modal-content search-modal-content">
+      <button class="modal-close" aria-label="Close search">&times;</button>
+      <form class="search-form" role="search">
+        <label for="search-input" class="visually-hidden">Search products</label>
+        <input type="search" id="search-input" placeholder="Search anime, series, characters..." autocomplete="off" aria-autocomplete="list" aria-controls="search-results">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <ul id="search-results" class="search-results" role="listbox" hidden></ul>
+      </form>
+      <div class="search-suggestions" aria-live="polite">
+        <span class="suggestions-label">Popular searches:</span>
+        <button type="button" class="suggestion-chip" data-search="Naruto">Naruto</button>
+        <button type="button" class="suggestion-chip" data-search="One Piece">One Piece</button>
+        <button type="button" class="suggestion-chip" data-search="Jujutsu Kaisen">JJK</button>
+        <button type="button" class="suggestion-chip" data-search="Demon Slayer">Demon Slayer</button>
+        <button type="button" class="suggestion-chip" data-search="Attack on Titan">Attack on Titan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wishlist Modal -->
+  <div class="modal wishlist-modal" id="wishlist-modal" role="dialog" aria-modal="true" aria-label="Wishlist" hidden>
+    <div class="modal-backdrop" tabindex="-1"></div>
+    <div class="modal-content wishlist-modal-content">
+      <div class="modal-header">
+        <h2>Wishlist</h2>
+        <button class="modal-close" aria-label="Close wishlist">&times;</button>
+      </div>
+      <div class="wishlist-content">
+        <p class="wishlist-empty">Your wishlist is empty. Start adding favorites!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <aside class="cart-sidebar" id="cart-sidebar" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-backdrop" tabindex="-1" aria-hidden="true"></div>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h2>Shopping Cart</h2>
+        <button class="cart-close" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" role="list" aria-label="Cart items"></div>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span class="cart-subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span class="cart-shipping">Calculated at checkout</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="cart-total">$0.00</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full checkout-btn" disabled>Proceed to Checkout</button>
+        <p class="cart-note">Shipping & taxes calculated at checkout</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main" role="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="hero-badge">Limited Drop 03 — Now Live</span>
+          <h1 id="hero-title" class="hero-title">
+            Wear Your
+            <span class="hero-title-accent">Obsession</span>
+          </h1>
+          <p class="hero-description">Premium heavyweight tees featuring iconic moments from the anime that shaped you. Limited runs. Premium cotton. No restocks.</p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary btn-lg">Shop the Drop</a>
+            <a href="#collections" class="btn btn-ghost btn-lg">Explore Series</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-value" data-count="12">0</span>
+              <span class="stat-label">Active Series</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" data-count="247">0</span>
+              <span class="stat-label">Designs Released</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" data-count="12000">0</span>
+              <span class="stat-label">Otaku Served</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-product-showcase" id="hero-showcase"></div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M19 12l-7 7-7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-bar" aria-label="Trust indicators">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>Secure Checkout</span>
+        </div>
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          <span>Fast Shipping</span>
+        </div>
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12V7H5v5M16 17l5-5-5-5M21 12H9"/>
+          </svg>
+          <span>Easy Returns</span>
+        </div>
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="collections" id="collections" aria-labelledby="collections-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="collections-title" class="section-title">Shop by Series & Gear</h2>
+          <p class="section-subtitle">Curated streetwear drops, anime tees, and exclusive accessories</p>
+        </header>
+        <div class="collections-grid" id="collections-grid" role="list"></div>
+        <a href="#shop" class="btn btn-glass section-cta">View All Collections</a>
+      </div>
+    </section>
+
+    <!-- Featured / New Arrivals -->
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-header-flex">
+            <div>
+              <h2 id="featured-title" class="section-title">Exclusive Drops</h2>
+              <p class="section-subtitle">Fresh anime tees, jewelry, caps, & streetwear accessories</p>
+            </div>
+            <div class="featured-filters" role="group" aria-label="Filter products">
+              <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Items</button>
+              <button class="filter-btn" data-filter="cat-tee" role="tab" aria-selected="false">Anime Tees</button>
+              <button class="filter-btn" data-filter="cat-accessory" role="tab" aria-selected="false">Accessories & Jewelry</button>
+              <button class="filter-btn" data-filter="bestseller" role="tab" aria-selected="false">Bestsellers</button>
+              <button class="filter-btn" data-filter="limited" role="tab" aria-selected="false">Limited Drops</button>
+            </div>
+          </div>
+        </header>
+        <div class="products-grid" id="products-grid" role="list"></div>
+        <div class="load-more-container">
+          <button class="btn btn-glass load-more-btn" id="load-more-btn">Load More Products</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section class="size-guide" id="size-guide" aria-labelledby="size-guide-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="size-guide-title" class="section-title">Find Your Perfect Fit</h2>
+          <p class="section-subtitle">Heavyweight 280gsm cotton. Pre-shrunk. Oversized fit — size down for regular fit.</p>
+        </header>
+        <div class="size-guide-content">
+          <div class="size-chart-container">
+            <table class="size-chart" role="table" aria-label="Size measurements in inches and cm">
+              <caption class="visually-hidden">T-shirt size measurements</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Size</th>
+                  <th scope="col">Chest (in)</th>
+                  <th scope="col">Chest (cm)</th>
+                  <th scope="col">Length (in)</th>
+                  <th scope="col">Length (cm)</th>
+                  <th scope="col">Shoulder (in)</th>
+                  <th scope="col">Shoulder (cm)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">S</th><td>42</td><td>107</td><td>28</td><td>71</td><td>18.5</td><td>47</td></tr>
+                <tr><th scope="row">M</th><td>45</td><td>114</td><td>29</td><td>74</td><td>19.5</td><td>50</td></tr>
+                <tr><th scope="row">L</th><td>48</td><td>122</td><td>30</td><td>76</td><td>20.5</td><td>52</td></tr>
+                <tr><th scope="row">XL</th><td>51</td><td>130</td><td>31</td><td>79</td><td>21.5</td><td>55</td></tr>
+                <tr><th scope="row">XXL</th><td>54</td><td>137</td><td>32</td><td>81</td><td>22.5</td><td>57</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="size-guide-help">
+            <h3>How to Measure</h3>
+            <ol class="measure-steps">
+              <li><strong>Chest:</strong> Measure around the fullest part, under armpits</li>
+              <li><strong>Length:</strong> From highest shoulder point to bottom hem</li>
+              <li><strong>Shoulder:</strong> Seam to seam across back</li>
+            </ol>
+            <p class="fit-note"><strong>Pro tip:</strong> Our tees run oversized. For a classic fit, size down. For the intended streetwear silhouette, stay true to size.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="newsletter-bg" aria-hidden="true"></div>
+      <div class="container newsletter-content">
+        <div class="newsletter-text">
+          <h2 id="newsletter-title" class="section-title">Join the Inner Circle</h2>
+          <p>Early access to drops. Exclusive designs. No spam. Just heat.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <label for="email" class="visually-hidden">Email address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email" aria-describedby="email-hint">
+          <span id="email-hint" class="visually-hidden">We'll never share your email</span>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-disclaimer">By subscribing, you agree to our <a href="#">Privacy Policy</a>.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="about-title" class="section-title">OtakuThreadz</h2>
+          <p class="section-subtitle">Built by fans, for fans</p>
+        </header>
+        <div class="about-grid">
+          <article class="about-card">
+            <div class="about-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3>Premium Quality</h3>
+            <p>280gsm heavyweight cotton, double-stitched hems, screen-printed with eco-friendly inks that won't crack or fade.</p>
+          </article>
+          <article class="about-card">
+            <div class="about-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3>Global Shipping</h3>
+            <p>Free shipping on orders $75+. Tracked delivery to 120+ countries. Duties paid on US/UK/EU orders.</p>
+          </article>
+          <article class="about-card">
+            <div class="about-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12V7H5V2H1L2 12l1 10h4V13h6v9h4v-9h4l1-10z"/>
+              </svg>
+            </div>
+            <h3>Limited Drops</h3>
+            <p>Every design runs once. When it's gone, it's gone forever. No restocks. No exceptions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo footer-logo" aria-label="OtakuThreadz Home">
+            <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 4L38 14v20L24 44L10 34V14L24 4Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M24 14L24 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 22L34 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">OtakuThreadz</span>
+          </a>
+          <p class="footer-tagline">Premium anime streetwear. Limited drops. No restocks.</p>
+          <div class="social-links" role="list" aria-label="Social media">
+            <a href="#" class="social-link" aria-label="Twitter" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Discord" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.442.757-.694 1.134a18.94 18.94 0 0 0-5.304-.13.077.077 0 0 0-.079-.037 14.59 14.59 0 0 0-1.219.355.077.077 0 0 0-.037.079c-.375.21-.757.442-1.134.694a18.3 18.3 0 0 0-.13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0 5.304.13.077.077 0 0 0 .079.037c.375-.21.757-.442 1.134-.694a18.293 18.293 0 0 0 .13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a18.94 18.94 0 0 0-5.304-.13.077.077 0 0 0-.079.037c-.375.21-.757.442-1.134.694a18.297 18.297 0 0 0-.13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0 5.304.13.074.074 0 0 0 .079-.037c.21-.375.442-.757.694-1.134a18.94 18.94 0 0 0 1.22-.355.077.077 0 0 0 .037-.079c-.21-.375-.442-.757-.694-1.134a18.3 18.3 0 0 0 .13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a19.784 19.784 0 0 0-4.884-1.515.077.077 0 0 0-.079-.037c-.375-.21-.757-.442-1.134-.694a18.293 18.293 0 0 0-.13-5.303.077.077 0 0 0 .037-.079c.21-.375.442-.757.694-1.134a18.924 18.924 0 0 0-5.304-.13.077.077 0 0 0-.079-.037 14.59 14.59 0 0 0-1.219-.355.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134A18.3 18.3 0 0 0 2.21 9.23.077.077 0 0 0 2.174 9.31a19.742 19.742 0 0 0-.13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0 5.304.13.077.077 0 0 0 .079-.037c.375-.21.757-.442 1.134-.694a18.293 18.293 0 0 0 .13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a18.94 18.94 0 0 0-5.304-.13.077.077 0 0 0-.079.037c-.375.21-.757.442-1.134.694a18.297 18.297 0 0 0-.13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0 5.304.13.074.074 0 0 0 .079-.037c.21-.375.442-.757.694-1.134a18.94 18.94 0 0 0 1.22-.355.077.077 0 0 0 .037-.079c-.21-.375-.442-.757-.694-1.134a18.3 18.3 0 0 0-.13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a19.784 19.784 0 0 0 4.885-1.515.077.077 0 0 0 .079.037c.375.21.757.442 1.134.694a18.293 18.293 0 0 0 .13 5.303.077.077 0 0 0 .037.079c-.21.375-.442.757-.694 1.134a18.94 18.94 0 0 0-5.304.13.077.077 0 0 0-.079-.037 14.59 14.59 0 0 0-1.219-.355.077.077 0 0 0-.037.079c-.21.375-.442.757-.694 1.134a18.3 18.3 0 0 0 .13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0 5.304-.13.074.074 0 0 0 .079.037 14.59 14.59 0 0 0 1.219.355.077.077 0 0 0 .037.079c.375.21.757.442 1.134.694a18.293 18.293 0 0 0 .13 5.303.077.077 0 0 0 .037.079c-.21.375-.442.757-.694 1.134a18.94 18.94 0 0 0-5.304.13.077.077 0 0 0-.079.037 14.59 14.59 0 0 0-1.219.355.077.077 0 0 0-.037.079c-.21.375-.442.757-.694 1.134a18.3 18.3 0 0 0 .13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a19.784 19.784 0 0 0 4.885 1.515.077.077 0 0 0 .079-.037c.375-.21.757-.442 1.134-.694a18.293 18.293 0 0 0 .13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a18.94 18.94 0 0 0-1.22-.355.077.077 0 0 0-.037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0-5.304-.13.077.077 0 0 0-.079.037c-.375.21-.757.442-1.134.694a18.297 18.297 0 0 0-.13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.94 18.94 0 0 0 5.304.13.074.074 0 0 0 .079-.037 14.59 14.59 0 0 0 1.219-.355.077.077 0 0 0 .037-.079c.21-.375.442-.757.694-1.134a18.3 18.3 0 0 0-.13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a19.784 19.784 0 0 0 4.884 1.515.077.077 0 0 0 .079.037c.375.21.757.442 1.134.694a18.293 18.293 0 0 0 .13 5.303.077.077 0 0 0 .037.079c-.21.375-.442.757-.694 1.134a18.94 18.94 0 0 0-5.304.13.077.077 0 0 0-.079-.037 14.59 14.59 0 0 0-1.219-.355.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a18.3 18.3 0 0 0-.13-5.303.077.077 0 0 0 .037-.079c.21-.375.442-.757.694-1.134a18.94 18.94 0 0 0 5.304-.13.077.077 0 0 0 .079.037 14.59 14.59 0 0 0 1.219.355.077.077 0 0 0 .037.079c.375.21.757.442 1.134.694a18.293 18.293 0 0 0 .13 5.303.077.077 0 0 0 .037.079c-.21.375-.442.757-.694 1.134a18.94 18.94 0 0 0-5.304.13.077.077 0 0 0-.079.037 14.59 14.59 0 0 0-1.219.355.077.077 0 0 0-.037.079c-.21.375-.442.757-.694 1.134a18.3 18.3 0 0 0 .13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a19.784 19.784 0 0 0 4.885 1.515.077.077 0 0 0 .079-.037c.375-.21.757-.442 1.134-.694a18.293 18.293 0 0 0 .13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a18.94 18.94 0 0 0-1.22-.355.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a19.784 19.784 0 0 0-4.884 1.515.077.077 0 0 0-.079.037c-.375.21-.757.442-1.134.694a18.293 18.293 0 0 0-.13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a18.924 18.924 0 0 0 5.304.13.077.077 0 0 0 .079-.037c.375-.21.757-.442 1.134-.694a18.293 18.293 0 0 0 .13-5.303.077.077 0 0 0-.037-.079c-.21-.375-.442-.757-.694-1.134a18.94 18.94 0 0 0-5.304-.13.077.077 0 0 0-.079.037 14.59 14.59 0 0 0-1.219.355.077.077 0 0 0-.037.079c-.21.375-.442.757-.694 1.134a18.3 18.3 0 0 0 .13 5.303.077.077 0 0 0 .037.079c.21.375.442.757.694 1.134a19.784 19.784 0 0 0 4.884-1.515.077.077 0 0 0 .079-.037c.375-.21.757-.442 1.134-.694a18.293 18.293 0 0 0 .13-5.303.077.077 0 0 0-.037-.079zM8.96 13.54a3.1 3.1 0 1 1 3.1 3.1 3.1 3.1 0 0 1-3.1-3.1zm6.08 0a3.1 3.1 0 1 1 3.1 3.1 3.1 3.1 0 0 1-3.1-3.1z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="TikTok" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.548.644a20.05 20.05 0 0 0-5.73.973 19.62 19.62 0 0 0-5.357 3.49 6.5 6.5 0 0 0-.387 2.87 7.08 7.08 0 0 0 2.02 4.86c1.892 1.73 4.162 2.91 6.573 3.467V17.79c-.944.1-2.38.164-3.32.164-3.3 0-5.734-2.786-5.734-6.434 0-1.18.214-2.034.73-3.05a19.11 19.11 0 0 1 4.92-4.56c.168-.338.315-.72.315-1.104 0-.747-.258-1.667-.81-2.235a12.07 12.07 0 0 0-1.567-1.208c.737-.104 1.444-.14 2.148-.14.96 0 1.574.232 1.574 1.23 0 .47-.042.752-.09 1.18a6.57 6.57 0 0 1-1.897 4.42c-.94.89-2.25 1.496-3.32 1.496-.95 0-1.858-.4-2.57-1.03a10.86 10.86 0 0 1 2.472-6.44 6.5 6.5 0 0 1 2.39-.75c1.258 0 2.31.43 3.25 1.08a6.2 6.2 0 0 0 2.2-2.28c-.52-1.03-1.36-1.8-2.68-2.23a20.84 20.84 0 0 1 5.08-1.62 10.7 10.7 0 0 1 3.58.415c.5-.96 1.376-1.83 2.49-2.42a24.15 24.15 0 0 1 6.22-.86c.818.75 1.44 1.62 1.93 2.59a6.5 6.5 0 0 1-.65 2.76 19.9 19.9 0 0 1-5.32 4.03c.387-.21.79-.36 1.17-.58a6.57 6.57 0 0 1 1.67 2.71c-.73 1.54-1.94 2.815-3.46 3.76a6.34 6.34 0 0 0 1.77 3.77c2.48 1.44 5.13 1.88 7.36 1.17a19.6 19.6 0 0 0 5.73-3.9 6.5 6.5 0 0 0 1.73-5.53c-.13-3.1-2.23-5.75-5.53-6.31zm-1.25 5.77a24.26 24.26 0 0 1-1.88 3.81 6.5 6.5 0 0 1-3.75-.94 20.2 20.2 0 0 0 5.63-2.87z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#shop">All Tees</a></li>
+              <li><a href="#collections">Collections</a></li>
+              <li><a href="#size-guide">Size Guide</a></li>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Best Sellers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 OtakuThreadz. All rights reserved.</p>
+        <div class="payment-methods" aria-label="Accepted payment methods">
+          <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><text x="0" y="16" font-size="12" font-weight="bold" fill="currentColor">VISA</text></svg>
+          <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><text x="0" y="16" font-size="12" font-weight="bold" fill="currentColor">MC</text></svg>
+          <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><text x="0" y="16" font-size="12" font-weight="bold" fill="currentColor">AMEX</text></svg>
+          <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><text x="0" y="16" font-size="12" font-weight="bold" fill="currentColor">PayPal</text></svg>
+          <svg width="40" height="24" viewBox="0 0 40 24" aria-hidden="true"><text x="0" y="16" font-size="12" font-weight="bold" fill="currentColor">Shop Pay</text></svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-label="Notifications"></div>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal quick-view-modal" id="quick-view-modal" role="dialog" aria-modal="true" aria-label="Product quick view" hidden>
+    <div class="modal-backdrop" tabindex="-1"></div>
+    <div class="modal-content quick-view-content">
+      <button class="modal-close" aria-label="Close quick view">&times;</button>
+      <div class="quick-view-body" id="quick-view-body"></div>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
